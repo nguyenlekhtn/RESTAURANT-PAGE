@@ -5,3 +5,5 @@ What skill I used in this project:
 - using JavaScript alone to generate the entire contents of the website
 - using webpack for bundling my website
 - using tabbed browsing to access pages
+
+Live Demo: https://nguyenlekhtn.github.io/restaurant-page/

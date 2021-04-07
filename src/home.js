@@ -1,3 +1,5 @@
+import MyPic from './img/IMG_7540.jpeg'
+
 function pageLoad() {
     const content = document.getElementById("content");
     const h1 = document.createElement("h1")
@@ -5,7 +7,7 @@ function pageLoad() {
     const p = document.createElement("p")
     p.textContent = "We are a small restaurant that you can eat and code at the same time. Our food will definitely make your brain fresh again. And guess what, you can have these ducks while eating";
     const pic1 = document.createElement("img")
-    pic1.setAttribute("src", "../img/IMG_7540.jpeg")
+    pic1.setAttribute("src", {MyPic})
     const imgCtn = document.createElement('div')
     imgCtn.classList.add("imgCtn")
     imgCtn.appendChild(pic1)

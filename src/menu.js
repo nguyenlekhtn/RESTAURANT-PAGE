@@ -1,3 +1,5 @@
+import comtam from './img/comtam.jpg'
+import pizza from './img/pizza.jpg'
 function pageLoad() {
     const content = document.getElementById("content");
     const columnCtn = document.createElement("div")
@@ -10,8 +12,8 @@ function pageLoad() {
     columnCtn.appendChild(p)
     const menu = document.createElement("div")
     menu.classList.add("menu")
-    const item1 = makeItem("../img/comtam.jpg", "Com tam dish")
-    const item2 = makeItem("../img/pizza.jpg", "Pizza")
+    const item1 = makeItem({comtam}, "Com tam dish")
+    const item2 = makeItem({pizza}, "Pizza")
     menu.appendChild(item1)
     menu.appendChild(item2)
     columnCtn.appendChild(menu)
