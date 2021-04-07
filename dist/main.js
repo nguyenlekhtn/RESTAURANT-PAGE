@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/backbone.js":
-/*!*************************!*\
-  !*** ./src/backbone.js ***!
-  \*************************/
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction pageLoad() {\n    const content = document.getElementById(\"content\");\n    const h2 = document.createElement(\"h2\")\n    h2.textContent = \"Welcome to RBD Food\";\n    const p = document.createElement(\"p\")\n    p.textContent = \"Our foods might be not the best. But you can have these ducks while eating\";\n    const pic1 = document.createElement(\"img\")\n    pic1.setAttribute(\"src\", \"../img/IMG_7540.jpeg\")\n    pic1.setAttribute(\"placeholder\", \"several ducks on laptop\")\n    pic1.style.width = \"300px\"\n    \n    \n    content.appendChild(h2)\n    content.appendChild(p)\n    content.appendChild(pic1)\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n//# sourceURL=webpack://restaurant-page/./src/backbone.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction pageLoad() {\n    const content = document.getElementById(\"content\")\n    const h1 = document.createElement(\"h1\")\n    h1.textContent = \"Contact us\"\n    content.appendChild(h1)\n    const container = document.createElement(\"div\")\n    container.classList.add(\"container\")\n    const contactBox = document.createElement(\"div\")\n    contactBox.classList.add(\"contact-box\")\n    const info = {\n                \"Address\": \"42 TQT Street, Distinct 3, HCM City, Viet Nam\", \n                \"Phone number\": \"0942xxxxxx\",\n                \"Email\": \"42@gmail.com\",\n                }\n    \n\n    for(const [key, value] of Object.entries(info)) {\n        const p = document.createElement(\"p\")\n        p.textContent = `${key}: ${value}`\n        contactBox.appendChild(p)\n    }\n    container.appendChild(contactBox)\n    content.appendChild(container)\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n//# sourceURL=webpack://restaurant-page/./src/contact.js?");
+
+/***/ }),
+
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction pageLoad() {\n    const content = document.getElementById(\"content\");\n    const h1 = document.createElement(\"h1\")\n    h1.textContent = \"Le's Restaurant\";\n    const p = document.createElement(\"p\")\n    p.textContent = \"We are a small restaurant that you can eat and code at the same time. Our food will definitely make your brain fresh again. And guess what, you can have these ducks while eating\";\n    const pic1 = document.createElement(\"img\")\n    pic1.setAttribute(\"src\", \"../img/IMG_7540.jpeg\")\n    const imgCtn = document.createElement('div')\n    imgCtn.classList.add(\"imgCtn\")\n    imgCtn.appendChild(pic1)\n    const textCtn = document.createElement('div')\n    textCtn.classList.add(\"textCtn\")\n    textCtn.appendChild(p)\n    const ctn = document.createElement('div')\n    ctn.classList.add(\"ctn\")\n    ctn.appendChild(imgCtn)\n    ctn.appendChild(textCtn)\n    const container = document.createElement('div')\n    container.classList.add(\"container\")\n    container.appendChild(ctn)\n    content.appendChild(h1)\n    content.appendChild(container)\n    \n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n//# sourceURL=webpack://restaurant-page/./src/home.js?");
 
 /***/ }),
 
@@ -26,7 +36,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _backbone__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./backbone */ \"./src/backbone.js\");\n\n\n(0,_backbone__WEBPACK_IMPORTED_MODULE_0__.default)()\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\nconst tabs = document.querySelectorAll(\".tabs button\")\nconst content = document.getElementById(\"content\")\nconst pageLoad = {Home: _home__WEBPACK_IMPORTED_MODULE_0__.default, Menu: _menu__WEBPACK_IMPORTED_MODULE_1__.default, Contact: _contact__WEBPACK_IMPORTED_MODULE_2__.default}\ntabs.forEach(tab => {\n    tab.addEventListener('click', e => {\n        if(!tab.classList.contains(\"isActive\")) {\n            content.textContent = \"\"\n            removeActiveTab()\n            activeCurrentTab(tab)\n            pageLoad[`${e.target.textContent}`]()\n        }\n        \n    })\n})\n\n;(0,_home__WEBPACK_IMPORTED_MODULE_0__.default)()\n\nfunction removeActiveTab() {\n    tabs.forEach(tab => {\n        tab.classList.remove(\"isActive\")\n    })\n}\n\nfunction activeCurrentTab(tab) {\n    tab.classList.add(\"isActive\")\n}\n\n\n\n//# sourceURL=webpack://restaurant-page/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/menu.js":
+/*!*********************!*\
+  !*** ./src/menu.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction pageLoad() {\n    const content = document.getElementById(\"content\");\n    const columnCtn = document.createElement(\"div\")\n    columnCtn.classList.add(\"column-container\")\n    const h1 = document.createElement(\"h1\")\n    h1.textContent = \"Menu\"\n    columnCtn.appendChild(h1)\n    const p = document.createElement(\"p\")\n    p.textContent = \"We deliver healthy dishes for your to have the best code ever\"\n    columnCtn.appendChild(p)\n    const menu = document.createElement(\"div\")\n    menu.classList.add(\"menu\")\n    const item1 = makeItem(\"../img/comtam.jpg\", \"Com tam dish\")\n    const item2 = makeItem(\"../img/pizza.jpg\", \"Pizza\")\n    menu.appendChild(item1)\n    menu.appendChild(item2)\n    columnCtn.appendChild(menu)\n    content.appendChild(columnCtn)\n}\n\nfunction makeItem(src, alt) {\n    const item = document.createElement(\"div\")\n    item.classList.add(\"item\")\n    const img = document.createElement(\"img\")\n    img.setAttribute(\"src\", src)\n    img.setAttribute(\"alt\", alt)\n    item.appendChild(img)\n\n    return item\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageLoad);\n\n//# sourceURL=webpack://restaurant-page/./src/menu.js?");
 
 /***/ })
 
