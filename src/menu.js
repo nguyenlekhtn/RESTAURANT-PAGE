@@ -1,5 +1,5 @@
-import comtam from './img/comtam.jpg'
-import pizza from './img/pizza.jpg'
+import Comtam from './img/comtam.jpg'
+import Pizza from './img/pizza.jpg'
 function pageLoad() {
     const content = document.getElementById("content");
     const columnCtn = document.createElement("div")
@@ -12,8 +12,8 @@ function pageLoad() {
     columnCtn.appendChild(p)
     const menu = document.createElement("div")
     menu.classList.add("menu")
-    const item1 = makeItem({comtam}, "Com tam dish")
-    const item2 = makeItem({pizza}, "Pizza")
+    const item1 = makeItem(Comtam, "Com tam dish")
+    const item2 = makeItem(Pizza, "Pizza")
     menu.appendChild(item1)
     menu.appendChild(item2)
     columnCtn.appendChild(menu)
